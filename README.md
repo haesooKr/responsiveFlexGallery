@@ -1,9 +1,9 @@
 # Responsive Flex Image Gallery
 
-![Mobile1](./images/mobile1.png)
-![Mobile2](./images/mobile2.png)
-![Desktop1](./images/desktop1.png)
-![Desktop2](./images/desktop2.png)
+<img src="./images/mobile1.png" width="200">
+<img src="./images/mobile2.png" width="200">
+<img src="./images/desktop1.png" width="400">
+<img src="./images/desktop2.png" width="400">
 
 ## Support All view port
 - mobile
