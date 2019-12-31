@@ -1,0 +1,139 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html{
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    background-color: black;
+    font-size: 24px;
+    font-weight: 200;
+}
+
+.panels{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    overflow: hidden;
+}
+
+.panel{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100vw;
+    flex: 1;
+    transition:
+        font-size 0.7s cubic-bezier(0.61,-0.19, 0.7,-0.11),
+        flex 0.7s cubic-bezier(0.61,-0.19, 0.7,-0.11);
+    background: yellow;
+    box-shadow: inset 0 0 0 5px rgba(255,255,255,0.1);
+    color: white;
+    font-size: 20px;
+    background-size: cover;
+    background-position: center;
+}
+.panel.open{
+    flex: 5;
+    font-size: 12px;
+}
+
+.panel > *{
+    transition: transform 0.5s;
+    width: 100%;
+}
+.panel > *:first-child{
+    transform: translateX(-100%);
+}
+.panel.open > *:first-child{
+    transform: translateX(0);
+}
+
+.panel > *:last-child{
+    transform: translateX(100%);
+}
+.panel.open > *:last-child{
+    transform: translateX(0);
+}
+
+.panel p{
+    text-align: center;
+    text-shadow: 0 0 4px rgba(0, 0, 0, 0.72), 0 0 14px rgba(0, 0, 0, 0.45);
+    font-size: 1em;
+}
+
+.panel p:nth-child(2){
+    font-size: 2em;
+}
+.panel5 p:nth-child(2){
+    font-size: 2em;
+}
+
+.panel1{background-image: url(images/dog.jpg);}
+.panel2{background-image: url(images/cat.jpg);}
+.panel3{background-image: url(images/lion.jpg);}
+.panel4{background-image: url(images/mouse.jpg);}
+.panel5{background-image: url(images/cock.jpg);}
+
+.panel1{
+    background-position-y: 20%;
+}
+.panel5{
+    background-position-y: 80%;
+}
+
+@media screen and (min-width: 768px){
+    .panel1{
+        background-position-y: 30%;
+    }
+    .panel2{
+        background-position-y: 35%;
+    }
+    .panel5{
+        background-position-y: 70%;
+    }
+}
+
+@media screen and (min-width: 1024px){
+    .panels{
+        flex-direction: row;
+    }
+    .panel{
+        flex-direction: column;
+        height: 100vh;
+    }
+    .panel p{
+        flex: 1;
+    }
+    .panel > *:first-child{
+        transform: translateX(0);
+        transform: translateY(-100%);
+    }
+    .panel.open > *:first-child{
+        transform: translateY(0);
+    }
+    
+    .panel > *:last-child{
+        transform: translateX(0);
+        transform: translateY(100%);
+    }
+    .panel.open > *:last-child{
+        transform: translateY(0);
+    }
+    .panel > * {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: transform 0.5s;
+        width: 100%;
+    }
+    .panel.open > *:nth-child(2){
+        font-size: 70px;
+    }
+    .panel.open >  *{
+        font-size: 40px;
+    }
+}
